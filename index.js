@@ -28,7 +28,12 @@ const app = express();
 const bodyParser = require('body-parser')
 
 var morgan = require("morgan");
-app.use(morgan('tiny'))
+//app.use(morgan('tiny'))
+
+morgan.token('reqData', (req, res) => {return JSON.stringify(req.body)})
+
+app.use(morgan(':method :url :reqData :status :res[content-length] - :response-time ms'))
+
 
 app.use(bodyParser.json())
 
