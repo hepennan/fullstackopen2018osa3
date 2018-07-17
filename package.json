@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/hepennan/fullstackopen2018osa3#readme",
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "morgan": "^1.9.0"
   },
