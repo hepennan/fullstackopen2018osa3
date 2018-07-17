@@ -1,0 +1,27 @@
+{
+  "name": "fullstackopen2018osa3",
+  "version": "1.0.0",
+  "description": "puhelinluettelon backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
+    "start": "node index.js",
+    "watch": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hepennan/fullstackopen2018osa3.git"
+  },
+  "author": "Helena Pennanen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hepennan/fullstackopen2018osa3/issues"
+  },
+  "homepage": "https://github.com/hepennan/fullstackopen2018osa3#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.2"
+  }
+}
