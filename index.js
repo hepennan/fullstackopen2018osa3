@@ -31,7 +31,7 @@ const bodyParser = require("body-parser");
 
 var morgan = require("morgan");
 //app.use(morgan('tiny'))
-
+app.use(express.static('build'))
 morgan.token("reqData", (req, res) => {
   return JSON.stringify(req.body);
 });
