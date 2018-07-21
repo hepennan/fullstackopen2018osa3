@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
-const url =
-  "mongodb://myfullstack:xxxx@ds237120.mlab.com:37120/puhelinluettelo";
+if ( process.env.NODE_ENV !== 'production' ) {
+  require('dotenv').config()
+}
+
+
+const url = process.env.MONGODB_URI;
 
 mongoose.connect(
   url,
