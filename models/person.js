@@ -19,4 +19,13 @@ const Person = mongoose.model("Person", {
   number: String
 });
 
+// static method
+Person.format = function(person) {
+  return {
+    name: person.name,
+    number: person.number,
+    id: person._id
+  };
+};
+
 module.exports = Person;

@@ -24,18 +24,10 @@ app.use(
 app.use(bodyParser.json());
 app.use(cors());
 
-const formatPerson = person => {
-  return {
-    name: person.name,
-    number: person.number,
-    id: person._id
-  };
-};
-
 app.get("/api/persons", (request, response) => {
   Person.find({})
     .then(persons => {
-      response.json(persons.map(formatPerson));
+      response.json(persons.map(Person.format));
     })
     .catch(error => {
       handleError(error);
@@ -61,7 +53,7 @@ app.get("/info", (request, response) => {
 app.get("/api/persons/:id", (request, response) => {
   Person.findById(request.params.id)
     .then(person => {
-      response.json(formatPerson(person));
+      response.json(Person.format(person));
     })
     .catch(error => {
       handleError("Error: Person with id ", request.params.id, "not found");
@@ -146,7 +138,7 @@ app.post("/api/persons", (request, response) => {
         newPerson
           .save()
           .then(savedPerson => {
-            response.json(formatPerson(savedPerson));
+            response.json(Person.format(savedPerson));
           })
           .catch(error => {
             handleError("error saving new person");
