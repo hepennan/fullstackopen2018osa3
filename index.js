@@ -168,7 +168,6 @@ app.put("/api/persons/:id", (request, response) => {
   if (!numberValid(body.number)) {
     return response.status(400).json({ error: "number missing" });
   } else {
-    console.log("kuin ihmeessä!")
     Person.findByIdAndUpdate(request.params.id, newPerson, { upsert: true })
       .then(response.status(204).end())
       .catch(error => {
